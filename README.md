@@ -1,2 +1,4 @@
 # cicdpipeline
-Test creating CI CD pipeline
+Travis CI Tutorial
+
+[![Build Status](https://travis-ci.com/vbhvrn16vaib/cicdpipeline.svg)](https://travis-ci.com/vbhvrn16vaib/cicdpipeline)
