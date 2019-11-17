@@ -20,6 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <docker.image.prefix>vbhvrn</docker.image.prefix>
+        <full-artifact-name>target/${project.build.finalName}.jar</full-artifact-name>
         <maven.deploy.skip>true</maven.deploy.skip>
     </properties>
 
@@ -98,6 +99,17 @@
                     </execution>
                 </executions>
             </plugin>
+                 			<plugin>
+		      <groupId>com.heroku.sdk</groupId>
+		      <artifactId>heroku-maven-plugin</artifactId>
+		      <version>2.0.11</version>
+		      <configuration>
+		        <appName>cicdpipeline</appName>
+		        <processTypes>
+		          <web>java $JAVA_OPTS -jar -Dserver.port=$PORT ${full-artifact-name}</web>
+		        </processTypes>
+		      </configuration>
+      		</plugin> 
         </plugins>
     </build>
 
