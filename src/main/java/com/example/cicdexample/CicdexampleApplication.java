@@ -15,7 +15,7 @@ public class CicdexampleApplication {
 
 	@GetMapping("/")
 	public String getHello(){
-		return "Ci Cd deployment";
+		return "Hello Docker World";
 	}
 
 }
